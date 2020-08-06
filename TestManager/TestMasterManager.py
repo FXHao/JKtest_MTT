@@ -84,19 +84,26 @@ class MasterManager:
             self.Channel = getattr(channelModule, "emptychannel")(self)
             self.Reporter.report("Channel: " + "emptychannel")
 
-    # [Helper] 从各个Module获取流程字典
+    # [Helper]
     def get_ProcessDictFromModule(self):
-        
+        '''
+        从各个Module获取流程字典
+        '''
         self.ProcessDictList = []
-        self.ProcessDictList.append(self.Game.getProcessDict())
-        self.ProcessDictList.append(self.Channel.getProcessDict())
+        self.ProcessDictList.append(self.Game.getProcessDict()) # 游戏相关流程
+        self.ProcessDictList.append(self.Channel.getProcessDict())  # 渠道相关流程
 
     # [Helper] 配置流程
     def config_process(self, process_control_file = None):
+        '''
+        配置流程
+        :param process_control_file: process.CSV
+        '''
         
         if (process_control_file == None or process_control_file == ""):
-            raise Exception("Invalid process control file name", process_control_file)
-        
+            # raise Exception("Invalid process control file name", process_control_file)
+            raise Exception("无效的流程控制文件！", process_control_file)
+
         # 初始化
         self.TestCaseList = []
         curID = 0
@@ -109,7 +116,7 @@ class MasterManager:
                 fields = line.split(',')
                 for i in range(0, len(fields)):
                     fields[i] = fields[i].strip()
-                    
+
                 # 创建并添加新TestCase
                 case = None
                 test_name = fields[0]
@@ -125,11 +132,14 @@ class MasterManager:
                     continue
                     
                 self.TestCaseList.append(case)
-        
         return
-    
-    # [Helper] 通过字典获取对应函数
+
+
+    # [Helper]
     def get_ProcessFunction(self, key = "None"):
+        '''
+        通过字典获取对应函数
+        '''
         for dic in self.ProcessDictList:
             if (key in dic):
                 return dic[key]
