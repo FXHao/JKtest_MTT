@@ -10,9 +10,13 @@ from TestManager.TestMasterManager import MasterManager
 from airtest.core.android.android import *
 
 def run():
+    # 主管理程序实例化
     m_MasterManager = MasterManager()
+    # 读取配置文件
     m_MasterManager.config(config_file = "config.ini")
+    # 打印测试流程列表
     m_MasterManager.print_test_list()
+    # 执行测试流程
     m_MasterManager.run_test()
 
     m_MasterManager.TestSummarize_print()
