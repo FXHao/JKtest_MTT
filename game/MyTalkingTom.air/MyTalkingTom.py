@@ -30,11 +30,34 @@ class MyTalkingTom(Game):
     
     # [Helper] 初始化图片
     def init_imglist(self):
-        self.nativeBanner = [Template(r"tpl1567505582092.png", record_pos=(-0.171, -0.874), resolution=(1080, 2248)), Template(r"tpl1568797914108.png", record_pos=(0.369, -0.818), resolution=(1080, 1920)), Template(r"tpl1568797924855.png", rgb=True, record_pos=(-0.374, -0.819), resolution=(1080, 1920)), Template(r"tpl1569480707179.png", record_pos=(-0.306, -0.9), resolution=(1080, 2244))]
-        self.nativeSplash = [Template(r"tpl1567911842071.png", record_pos=(0.031, 0.77), resolution=(1080, 1920)), Template(r"tpl1569480920892.png", record_pos=(0.043, -0.35), resolution=(1080, 2244))]
+        self.nativeBanner = [
+            Template(r"tpl1569480707179.png", record_pos=(-0.306, -0.9), resolution=(1080, 2244)),
+            Template(r"tpl1567505582092.png", record_pos=(-0.171, -0.874), resolution=(1080, 2248)),
+            Template(r"tpl1568797914108.png", record_pos=(0.369, -0.818), resolution=(1080, 1920)),
+            Template(r"tpl1568797924855.png", rgb=True, record_pos=(-0.374, -0.819), resolution=(1080, 1920)),
+        ]
+
+        self.nativeSplash = [
+            Template(r"tpl1567911842071.png", record_pos=(0.031, 0.77), resolution=(1080, 1920)),
+            Template(r"tpl1569480920892.png", record_pos=(0.043, -0.35), resolution=(1080, 2244))
+        ]
+
         self.nativeSplashClose = None
-        self.nativeInterstitial = [Template(r"tpl1567569523059.png", record_pos=(0.013, -0.473), resolution=(1080, 2248)), Template(r"tpl1568187767836.png", record_pos=(0.003, 0.511), resolution=(1080, 1920)), Template(r"tpl1568188097403.png", record_pos=(-0.002, -0.616), resolution=(1080, 1920)), Template(r"tpl1568188109861.png", record_pos=(0.001, -0.652), resolution=(1080, 1920)), Template(r"tpl1568188129389.png", record_pos=(0.012, -0.591), resolution=(1080, 1920)), Template(r"tpl1568704086495.png", record_pos=(-0.003, -0.673), resolution=(1080, 1920)), Template(r"tpl1568798608788.png", record_pos=(-0.244, -0.028), resolution=(1080, 1920)), Template(r"tpl1569548730374.png", record_pos=(0.432, 0.049), resolution=(1080, 2244))]
-        self.nativeInterstitialClose = [Template(r"tpl1569483684083.png", record_pos=(0.392, -0.263), resolution=(1080, 2244)), Template(r"tpl1569548743261.png", record_pos=(0.367, -0.349), resolution=(1080, 2244))]
+        self.nativeInterstitial = [
+            Template(r"tpl1567569523059.png", record_pos=(0.013, -0.473), resolution=(1080, 2248)),
+            Template(r"tpl1568187767836.png", record_pos=(0.003, 0.511), resolution=(1080, 1920)),
+            Template(r"tpl1568188097403.png", record_pos=(-0.002, -0.616), resolution=(1080, 1920)),
+            Template(r"tpl1568188109861.png", record_pos=(0.001, -0.652), resolution=(1080, 1920)),
+            Template(r"tpl1568188129389.png", record_pos=(0.012, -0.591), resolution=(1080, 1920)),
+            Template(r"tpl1568704086495.png", record_pos=(-0.003, -0.673), resolution=(1080, 1920)),
+            Template(r"tpl1568798608788.png", record_pos=(-0.244, -0.028), resolution=(1080, 1920)),
+            Template(r"tpl1569548730374.png", record_pos=(0.432, 0.049), resolution=(1080, 2244))
+        ]
+
+        self.nativeInterstitialClose = [
+            Template(r"tpl1569483684083.png", record_pos=(0.392, -0.263), resolution=(1080, 2244)),
+            Template(r"tpl1569548743261.png", record_pos=(0.367, -0.349), resolution=(1080, 2244))
+        ]
         
     ''' 获取流程字典 '''
     def getProcessDict(self):
@@ -64,14 +87,24 @@ class MyTalkingTom(Game):
     '''================== 通用流程 ==================='''
     
     def goToLivingroom(self, isReportInterstitial = False, isReportVideo = False):
-        pos = exists_any([Template(r"tpl1567667429838.png", record_pos=(-0.203, 0.922), resolution=(1080, 2248)), Template(r"tpl1567667416052.png", record_pos=(-0.194, 0.92), resolution=(1080, 2248)), Template(r"tpl1567589317467.png", record_pos=(-0.196, 0.925), resolution=(1080, 2248)), Template(r"tpl1567589396053.png", record_pos=(-0.198, 0.925), resolution=(1080, 2248)),Template(r"tpl1596538199151.png", record_pos=(-0.194, 0.948), resolution=(1080, 2340))])
+        pos = exists_any([
+            Template(r"tpl1567667429838.png", record_pos=(-0.203, 0.922), resolution=(1080, 2248)),
+            Template(r"tpl1567667416052.png", record_pos=(-0.194, 0.92), resolution=(1080, 2248)),
+            Template(r"tpl1567589317467.png", record_pos=(-0.196, 0.925), resolution=(1080, 2248)),
+            Template(r"tpl1567589396053.png", record_pos=(-0.198, 0.925), resolution=(1080, 2248)),
+            Template(r"tpl1596538199151.png", record_pos=(-0.194, 0.948), resolution=(1080, 2340))
+        ])
         if (pos == False):
-            assert_equal(True, False, "goToLivingroom() not called in main screen.")
+            assert_equal(True, False, "goToLivingroom()，客厅按钮未找到.")
             return
         for i in range(0, 10):
             touch(pos)
             sleep(1)
-            pos2 = exists(Template(r"tpl1570517004453.png", record_pos=(0.302, 0.055), resolution=(1080, 2280)))
+            # pos2 = exists(Template(r"tpl1570517004453.png", record_pos=(0.302, 0.055), resolution=(1080, 2280)))
+            pos2 = exists_any([
+                Template(r"tpl1570517004453.png", record_pos=(0.302, 0.055), resolution=(1080, 2280)),
+                Template(r"tpl1597747615936.png", record_pos=(0.051, -0.426), resolution=(1080, 2340))
+            ])
 
             if (pos2 == False):
                 # Todo: 需要检测和跳过的流程
@@ -88,7 +121,12 @@ class MyTalkingTom(Game):
         assert_equal(True, False, "Should not be here.")
         
     def goToKitchen(self, isReportInterstitial = False, isReportVideo = False):
-        pos = exists_any([Template(r"tpl1567577528299.png", record_pos=(0.0, 0.919), resolution=(1080, 2248)), Template(r"tpl1567667454466.png", record_pos=(0.005, 0.92), resolution=(1080, 2248)), Template(r"tpl1567589340484.png", record_pos=(-0.001, 0.923), resolution=(1080, 2248)), Template(r"tpl1567589388744.png", record_pos=(-0.001, 0.924), resolution=(1080, 2248))])
+        pos = exists_any([
+            Template(r"tpl1567577528299.png", record_pos=(0.0, 0.919), resolution=(1080, 2248)),
+            Template(r"tpl1567667454466.png", record_pos=(0.005, 0.92), resolution=(1080, 2248)),
+            Template(r"tpl1567589340484.png", record_pos=(-0.001, 0.923), resolution=(1080, 2248)),
+            Template(r"tpl1567589388744.png", record_pos=(-0.001, 0.924), resolution=(1080, 2248))
+        ])
         if (pos == False):
             assert_equal(True, False, "goToKitchen() not called in main screen.")
             return
@@ -373,7 +411,7 @@ class MyTalkingTom_Guide():
     # 设置界面
     def setting_setting(self):
         case = self.MasterManager.curCase
-        case.Message += "TestPoint: Guide_Setting\n"
+        case.Message += "测试点: 设置界面\n"
         sleep(1)
         touch(Template(r"tpl1567566946253.png", record_pos=(-0.372, -0.633), resolution=(1080, 2248)))
         touch(Template(r"tpl1567566961287.png", record_pos=(0.153, 0.909), resolution=(1080, 2248)))
@@ -386,6 +424,8 @@ class MyTalkingTom_Guide():
     
     # 法律界面
     def setting_law(self):
+        case = self.MasterManager.curCase
+        case.Message += "测试点：法律界面\n"
         sleep(1)
         touch(Template(r"tpl1567566946253.png", record_pos=(-0.372, -0.633), resolution=(1080, 2248)))
         touch(Template(r"tpl1567566961287.png", record_pos=(0.153, 0.909), resolution=(1080, 2248)))
@@ -407,6 +447,7 @@ class MyTalkingTom_Guide():
     def setting_Tom(self):
         
         case = self.MasterManager.curCase
+        case.Message += "测试点：汤姆猫信息界面\n"
         
         sleep(1)
         touch(Template(r"tpl1567566946253.png", record_pos=(-0.372, -0.633), resolution=(1080, 2248)))

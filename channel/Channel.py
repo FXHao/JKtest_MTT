@@ -37,18 +37,18 @@ class Channel(ABC):
     
     eCheckPoint = {"None": 0,
 
-                   "OrdinarySplash_Exist": 1,  # 普通开屏存在
-                   "OrdinarySplash_Close": 2,  # 普通开屏关闭
-                   "NativeSplash_Exist": 3,    # 原生插屏存在
-                   "NativeSplash_Close": 4,    # 原生插屏关闭
+                   "OrdinarySplash_Exist": 1,
+                   "OrdinarySplash_Close": 2,
+                   "NativeSplash_Exist": 3,
+                   "NativeSplash_Close": 4,
                     
-                   "OrdinaryBanner_Exist": 5,  # 普通banner存在
-                   "NativeBanner_Exist": 6,    # 原生banner存在
+                   "OrdinaryBanner_Exist": 5,
+                   "NativeBanner_Exist": 6,
 
-                   "OrdinaryInterstitial_Exist": 7,  # 普通插屏存在
-                   "OrdinaryInterstitial_Close": 8,  # 普通插屏关闭
-                   "NativeInterstitial_Exist": 9,    # 原生插屏存在
-                   "NativeInterstitial_Close": 10,   # 原生插屏关闭
+                   "OrdinaryInterstitial_Exist": 7,
+                   "OrdinaryInterstitial_Close": 8,
+                   "NativeInterstitial_Exist": 9,
+                   "NativeInterstitial_Close": 10,
                    
                    "Video_Exist": 11,
                    "Video_End": 12,
@@ -79,10 +79,10 @@ class Channel(ABC):
         
         if (PocoType == self.eCheckPoint["None"]):
             return None
-        
+
         if (PocoType == self.eCheckPoint["OrdinarySplash_Exist"]):        # 普通开屏_存在
             return None
-        
+
         if (PocoType == self.eCheckPoint["NativeSplash_Exist"]):          # 原生开屏_存在
             return None
         
@@ -109,20 +109,27 @@ class Channel(ABC):
             建议全部都填, 但是在有Poco的情况下不会用到图片
         '''
 
-        # if (ImageType == self.eCheckPoint["OrdinarySplash_Exist"]):        # 普通开屏_存在
-        #     return None
-        #
-        # if (ImageType == self.eCheckPoint["OrdinarySplash_Close"]):        # 普通开屏_关闭
-        #     return None
-        #
-        # if (ImageType == self.eCheckPoint["OrdinaryBanner_Exist"]):        # 普通Banner_存在
-        #     return [Template(r"tpl1567654232363.png", record_pos=(0.469, -1.019), resolution=(1080, 2248))]
-        #
-        # if (ImageType == self.eCheckPoint["OrdinaryInterstitial_Exist"]):  # 普通插屏_存在
-        #     return [Template(r"tpl1567505512972.png", record_pos=(0.005, 0.424), resolution=(1080, 2248))]
-        #
-        # if (ImageType == self.eCheckPoint["Video_Close"]):                 # Video_关闭
-        #     return [Template(r"tpl1565835360516.png", record_pos=(-0.226, 0.157), resolution=(720, 1280)), Template(r"tpl1565836077492.png", record_pos=(0.365, -0.934), resolution=(1080, 2340)), Template(r"tpl1565851739238.png", record_pos=(0.415, -0.806), resolution=(720, 1280)), Template(r"tpl1565836224911.png", record_pos=(0.412, -0.803), resolution=(720, 1280))]
+        if (ImageType == self.eCheckPoint["OrdinarySplash_Exist"]):        # 普通开屏_存在
+            return None
+
+        if (ImageType == self.eCheckPoint["OrdinarySplash_Close"]):        # 普通开屏_关闭
+            return None
+
+        if (ImageType == self.eCheckPoint["OrdinaryBanner_Exist"]):        # 普通Banner_存在
+            return [
+                Template(r"tpl1567654232363.png", record_pos=(0.469, -1.019), resolution=(1080, 2248))]
+
+        if (ImageType == self.eCheckPoint["OrdinaryInterstitial_Exist"]):  # 普通插屏_存在
+            return [
+                Template(r"tpl1567505512972.png", record_pos=(0.005, 0.424), resolution=(1080, 2248))]
+
+        if (ImageType == self.eCheckPoint["Video_Close"]):                 # Video_关闭
+            return [
+                Template(r"tpl1565835360516.png", record_pos=(-0.226, 0.157), resolution=(720, 1280)),
+                Template(r"tpl1565836077492.png", record_pos=(0.365, -0.934), resolution=(1080, 2340)),
+                Template(r"tpl1565851739238.png", record_pos=(0.415, -0.806), resolution=(720, 1280)),
+                Template(r"tpl1565836224911.png", record_pos=(0.412, -0.803), resolution=(720, 1280))
+            ]
 
         # Defalut
         return None
@@ -208,7 +215,7 @@ class Channel(ABC):
         
         sleep(4)
         
-        checkpoint_list = [[self.getPoco(self.eCheckPoint["OrdinaryInterstitial_Exist"]), 
+        checkpoint_list = [[self.getPoco(self.eCheckPoint["OrdinaryInterstitial_Exist"]),
                             self.getPoco(self.eCheckPoint["OrdinaryInterstitial_Close"]),
                             "检测到普通插屏(Poco)"],
                            [self.getPoco(self.eCheckPoint["NativeInterstitial_Exist"]),

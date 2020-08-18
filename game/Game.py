@@ -45,6 +45,6 @@ class Game(ABC):
         clear_app(self.AppID)
         sleep(3)
 
-#     def wake_phone(self):
-#         wake()
-#         sleep(2)
+    def wake_phone(self):
+        wake()
+        sleep(2)

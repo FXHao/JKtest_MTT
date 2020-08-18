@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/JinkeTest2.iml" filepath="$PROJECT_DIR$/.idea/JinkeTest2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../测试/JinkeTest_1/.idea/JinkeTest_1.iml" filepath="$PROJECT_DIR$/../../../测试/JinkeTest_1/.idea/JinkeTest_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JinkeTest_MTT.iml" filepath="$PROJECT_DIR$/.idea/JinkeTest_MTT.iml" />
     </modules>
   </component>
 </project>
