@@ -44,7 +44,7 @@ class vivo(Channel):
 
         if (PocoType == self.eCheckPoint["OrdinarySplash_Close"]):        # 普通开屏_关闭
             # return None
-            return [poco(nameMatches = '(.*)id/tt_splash_skip_btn')]
+            return poco(nameMatches = '(.*)id/tt_splash_skip_btn')
 
         if (PocoType == self.eCheckPoint["NativeSplash_Exist"]):          # 原生开屏_存在
             return None

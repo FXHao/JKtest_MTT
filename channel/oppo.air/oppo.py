@@ -18,11 +18,17 @@ class oppo(Channel):
     # 登录
     def login(self):
         for i in range(0, 10):
-            pos = exists_any([Template(r"tpl1568174154529.png", record_pos=(-0.057, -0.36), resolution=(1080, 1920)), Template(r"tpl1569228712107.png", record_pos=(0.019, -0.407), resolution=(1080, 1920))])
+            pos = exists_any([
+                Template(r"tpl1568174154529.png", record_pos=(-0.057, -0.36), resolution=(1080, 1920)),
+                Template(r"tpl1569228712107.png", record_pos=(0.019, -0.407), resolution=(1080, 1920))
+            ])
             if (pos != False):
                 keyevent("BACK")
                 continue
-            pos = exists_any([Template(r"tpl1568883448109.png", record_pos=(0.381, 0.02), resolution=(1080, 1920)), Template(r"tpl1568883477317.png", record_pos=(-0.397, 0.765), resolution=(1080, 1920))])
+            pos = exists_any([
+                Template(r"tpl1568883448109.png", record_pos=(0.381, 0.02), resolution=(1080, 1920)),
+                Template(r"tpl1568883477317.png", record_pos=(-0.397, 0.765), resolution=(1080, 1920))
+            ])
             if (pos != False):
                 break
             keyevent("BACK")
@@ -72,11 +78,20 @@ class oppo(Channel):
             return None
         
         if (PocoType == self.eCheckPoint["Video_End"]):                   # Video_结束
-            return None
-        
+            # return None
+            return poco(textMatches = '^.*关闭')
+
         if (PocoType == self.eCheckPoint["Video_Close"]):                 # Video_关闭
             return None
-    
+
+        if (PocoType == self.eCheckPoint["Video_Interstitial_Exist"]):    # 视频插屏
+            return poco(nameMatches = "(.*)id/tt_reward_root")
+
+        if (PocoType == self.eCheckPoint["Video_Interstitial_Close"]):
+            return [
+                poco(nameMatches = "(.*)id/tt_top_skip"),
+                poco(nameMatches = "(.*)id/tt_video_ad_close")
+            ]
         return None
 
     def getImage(self, ImageType = Channel.eCheckPoint["None"]):

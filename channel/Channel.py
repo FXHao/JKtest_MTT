@@ -52,7 +52,11 @@ class Channel(ABC):
                    
                    "Video_Exist": 11,
                    "Video_End": 12,
-                   "Video_Close": 13}
+                   "Video_Close": 13,
+
+                   "Video_Interstitial_Exist": 14,
+                   "Video_Interstitial_Close": 15
+                   }
     
     ''' 返回相应监测点的Poco
         若该监测点不可使用Poco, 则返回None'''
@@ -87,8 +91,9 @@ class Channel(ABC):
             return None
         
         if (PocoType == self.eCheckPoint["OrdinaryBanner_Exist"]):        # 普通Banner_存在
-            return [poco(text="广告"), poco(nameMatches = "(.*)id/activead").offspring()]
-        
+            # return [poco(text="广告"), poco(nameMatches = "(.*)id/activead").offspring()]
+            return poco(nameMatches = "(.*)id/activead")
+
         if (PocoType == self.eCheckPoint["NativeBanner_Exist"]):          # 原生Banner_存在
             return None
         
@@ -99,6 +104,12 @@ class Channel(ABC):
             return None
         
         if (PocoType == self.eCheckPoint["Video_End"]):                   # Video_结束
+            return None
+
+        if (PocoType == self.eCheckPoint["Video_Interstitial_Exist"]):    # 视频插屏_存在
+            return None
+
+        if (PocoType == self.eCheckPoint["Video_Interstitial_Close"]):    # 视频插屏_关闭
             return None
     
         return None

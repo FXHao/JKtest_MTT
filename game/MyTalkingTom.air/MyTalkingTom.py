@@ -38,19 +38,19 @@ class MyTalkingTom(Game):
         ]
 
         self.nativeSplash = [
-            Template(r"tpl1567911842071.png", record_pos=(0.031, 0.77), resolution=(1080, 1920)),
+            # Template(r"tpl1567911842071.png", record_pos=(0.031, 0.77), resolution=(1080, 1920)),
             Template(r"tpl1569480920892.png", record_pos=(0.043, -0.35), resolution=(1080, 2244))
         ]
 
         self.nativeSplashClose = None
         self.nativeInterstitial = [
-            Template(r"tpl1567569523059.png", record_pos=(0.013, -0.473), resolution=(1080, 2248)),
-            Template(r"tpl1568187767836.png", record_pos=(0.003, 0.511), resolution=(1080, 1920)),
-            Template(r"tpl1568188097403.png", record_pos=(-0.002, -0.616), resolution=(1080, 1920)),
-            Template(r"tpl1568188109861.png", record_pos=(0.001, -0.652), resolution=(1080, 1920)),
-            Template(r"tpl1568188129389.png", record_pos=(0.012, -0.591), resolution=(1080, 1920)),
-            Template(r"tpl1568704086495.png", record_pos=(-0.003, -0.673), resolution=(1080, 1920)),
             Template(r"tpl1568798608788.png", record_pos=(-0.244, -0.028), resolution=(1080, 1920)),
+            Template(r"tpl1567569523059.png", record_pos=(0.013, -0.473), resolution=(1080, 2248)),
+            # Template(r"tpl1568187767836.png", record_pos=(0.003, 0.511), resolution=(1080, 1920)),
+            # Template(r"tpl1568188097403.png", record_pos=(-0.002, -0.616), resolution=(1080, 1920)),
+            # Template(r"tpl1568188109861.png", record_pos=(0.001, -0.652), resolution=(1080, 1920)),
+            # Template(r"tpl1568188129389.png", record_pos=(0.012, -0.591), resolution=(1080, 1920)),
+            # Template(r"tpl1568704086495.png", record_pos=(-0.003, -0.673), resolution=(1080, 1920)),
             Template(r"tpl1569548730374.png", record_pos=(0.432, 0.049), resolution=(1080, 2244))
         ]
 
