@@ -19,11 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0361d27a-405a-4f20-8bef-2ce617267b32" name="Default Changelist" comment="小修改。">
+    <list default="true" id="0361d27a-405a-4f20-8bef-2ce617267b32" name="Default Changelist" comment="poco调整">
+      <change afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/tpl1597905990964.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/tpl1597906407997.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/tpl1597906451619.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/tpl1597906510673.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/tpl1597907023319.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/tpl1597912343392.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/tpl1597912633490.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/tpl1597918289917.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/Channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/Channel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/oppo.air/oppo.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/oppo.air/oppo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/vivo.air/vivo.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/vivo.air/vivo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/emptychannel.air/emptychannel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/emptychannel.air/emptychannel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/MyTalkingTom.air/MyTalkingTom.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/MyTalkingTom.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,14 +53,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/game/MyTalkingTom.air" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\Desktop\GitHub\JinkeTest_MTT\game\MyTalkingTom.air" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.read_xml">
     <configuration name="apkinfo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -123,7 +134,7 @@
       <workItem from="1597368299837" duration="77000" />
       <workItem from="1597369033373" duration="6903000" />
       <workItem from="1597740098806" duration="14553000" />
-      <workItem from="1597802331138" duration="11222000" />
+      <workItem from="1597802331138" duration="27628000" />
     </task>
     <task id="LOCAL-00001" summary="小修改。">
       <created>1597760315317</created>
@@ -132,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597760315317</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="poco调整">
+      <created>1597842493506</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1597842493506</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +171,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="小修改。" />
-    <option name="LAST_COMMIT_MESSAGE" value="小修改。" />
+    <MESSAGE value="poco调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="poco调整" />
   </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1736" height="866" key="DiffContextDialog" timestamp="1597801116112">
@@ -176,14 +195,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1305" height="288" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1597740974826" />
-    <state x="461" y="169" key="SettingsEditor" timestamp="1597743974429">
+    <state x="465" y="209" key="SettingsEditor" timestamp="1597991662645">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1597743974429" />
-    <state x="388" y="258" key="Vcs.Push.Dialog.v2" timestamp="1597760377078">
+    <state x="465" y="209" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1597991662645" />
+    <state x="388" y="258" key="Vcs.Push.Dialog.v2" timestamp="1597842516337">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="388" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1597760377078" />
+    <state x="388" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1597842516337" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/JinkeTest_MTT$apkinfo.coverage" NAME="apkinfo Coverage Results" MODIFIED="1597370841262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../.." />

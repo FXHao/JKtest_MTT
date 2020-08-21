@@ -39,7 +39,8 @@ class MyTalkingTom(Game):
 
         self.nativeSplash = [
             # Template(r"tpl1567911842071.png", record_pos=(0.031, 0.77), resolution=(1080, 1920)),
-            Template(r"tpl1569480920892.png", record_pos=(0.043, -0.35), resolution=(1080, 2244))
+            Template(r"tpl1569480920892.png", record_pos=(0.043, -0.35), resolution=(1080, 2244)),
+
         ]
 
         self.nativeSplashClose = None
@@ -61,23 +62,24 @@ class MyTalkingTom(Game):
         
     ''' 获取流程字典 '''
     def getProcessDict(self):
-        return {#"WakePhone": self.wake_phone,
-                "StartApp": self.start_app,
-                "StopApp": self.stop_app,
-                "ClearApp": self.clear_app,
+        return {
+                #"WakePhone": self.wake_phone,
+                "StartApp": self.start_app,  # 启动APP
+                "StopApp": self.stop_app,    # 关闭APP
+                "ClearApp": self.clear_app,  # 清除数据
+
+                "Guide": self.GuideTest.guide,  # 新手指引
+                "Setting": self.GuideTest.setting,  # 设置入口
+                "Shop": self.GuideTest.shop,    #  商店入口
+                "MiniGame": self.GuideTest.minigame,  # 小游戏
                 
-                "Guide": self.GuideTest.guide,
-                "Setting": self.GuideTest.setting,
-                "Shop": self.GuideTest.shop,
-                "MiniGame": self.GuideTest.minigame,
-                
-                "CheckSplash": self.AdTest.checkSplash,
-                "CheckBanner": self.AdTest.checkBanner,
-                "CheckInterstitial": self.AdTest.checkInterstitial,
-                "CheckVideo": self.AdTest.checkVideo,
+                "CheckSplash": self.AdTest.checkSplash,  # 检测开屏
+                "CheckBanner": self.AdTest.checkBanner,  # 检测banner
+                "CheckInterstitial": self.AdTest.checkInterstitial,  # 检测插屏
+                "CheckVideo": self.AdTest.checkVideo,  # 检测视频
                 
                 # Check Banner 子流程
-                "CheckBanner_LiviningRoom": self.AdTest.checkBanner_Livingroom,
+                "CheckBanner_LiviningRoom": self.AdTest.checkBanner_Livingroom,  #
                 "CheckBanner_Kitchen": self.AdTest.checkBanner_Kitchen,
                 "CheckBanner_Bathroom": self.AdTest.checkBanner_Bathroom,
                 "CheckBanner_Bedroom": self.AdTest.checkBanner_Bedroom
@@ -95,7 +97,7 @@ class MyTalkingTom(Game):
             Template(r"tpl1596538199151.png", record_pos=(-0.194, 0.948), resolution=(1080, 2340))
         ])
         if (pos == False):
-            assert_equal(True, False, "goToLivingroom()，客厅按钮未找到.")
+            assert_equal(True, False, "goToLivingroom() 客厅按钮未找到.")
             return
         for i in range(0, 10):
             touch(pos)
@@ -118,17 +120,18 @@ class MyTalkingTom(Game):
                 sleep(0.5)
                 continue
             return
-        assert_equal(True, False, "Should not be here.")
+        assert_equal(True, False, "不应该出现在这里.")
         
     def goToKitchen(self, isReportInterstitial = False, isReportVideo = False):
         pos = exists_any([
             Template(r"tpl1567577528299.png", record_pos=(0.0, 0.919), resolution=(1080, 2248)),
             Template(r"tpl1567667454466.png", record_pos=(0.005, 0.92), resolution=(1080, 2248)),
+            Template(r"tpl1597905990964.png", record_pos=(0.002, 0.923), resolution=(1080, 2280)),
             Template(r"tpl1567589340484.png", record_pos=(-0.001, 0.923), resolution=(1080, 2248)),
             Template(r"tpl1567589388744.png", record_pos=(-0.001, 0.924), resolution=(1080, 2248))
         ])
         if (pos == False):
-            assert_equal(True, False, "goToKitchen() not called in main screen.")
+            assert_equal(True, False, "goToKitchen() 厨房按钮未找到.")
             return
         for i in range(0, 10):
             touch(pos)
@@ -146,12 +149,18 @@ class MyTalkingTom(Game):
                 sleep(0.5)
                 continue
             return
-        assert_equal(True, False, "Should not be here.")
+        assert_equal(True, False, "不应该出现在这里.")
     
     def goToBathroom(self, isReportInterstitial = False, isReportVideo = False):
-        pos = exists_any([Template(r"tpl1567506551693.png", record_pos=(0.196, 0.919), resolution=(1080, 2248)), Template(r"tpl1567664748415.png", record_pos=(0.197, 0.92), resolution=(1080, 2248))])
+        pos = exists_any([
+            Template(r"tpl1567506551693.png", record_pos=(0.196, 0.919), resolution=(1080, 2248)),
+            Template(r"tpl1567664748415.png", record_pos=(0.197, 0.92), resolution=(1080, 2248)),
+            Template(r"tpl1597906407997.png", record_pos=(0.197, 0.924), resolution=(1080, 2280)),
+            Template(r"tpl1597906451619.png", record_pos=(0.2, 0.931), resolution=(1080, 2280)),
+            Template(r"tpl1597906510673.png", record_pos=(0.206, 0.928), resolution=(1080, 2280))
+        ])
         if (pos == False):
-            assert_equal(True, False, "goToBathroom() not called in main screen.")
+            assert_equal(True, False, "goToBathroom() 测试按钮未找到.")
             return
         for i in range(0, 10):
             touch(pos)
@@ -166,17 +175,25 @@ class MyTalkingTom(Game):
                 sleep(0.5)
                 continue
             return
-        assert_equal(True, False, "Should not be here.")
+        assert_equal(True, False, "不应该出现在这里.")
     
     def goToBedroom(self, isReportInterstitial = False, isReportVideo = False):
-        pos = exists_any([Template(r"tpl1567506283133.png", record_pos=(0.401, 0.919), resolution=(1080, 2248)), Template(r"tpl1567589362374.png", record_pos=(0.401, 0.923), resolution=(1080, 2248)), Template(r"tpl1567589372396.png", record_pos=(0.397, 0.919), resolution=(1080, 2248))])
+        pos = exists_any([
+            Template(r"tpl1567506283133.png", record_pos=(0.401, 0.919), resolution=(1080, 2248)),
+            Template(r"tpl1567589362374.png", record_pos=(0.401, 0.923), resolution=(1080, 2248)),
+            Template(r"tpl1567589372396.png", record_pos=(0.397, 0.919), resolution=(1080, 2248))
+        ])
         if (pos == False):
-            assert_equal(True, False, "goToBedroom() not called in main screen.")
+            assert_equal(True, False, "goToBedroom() 卧室按钮未找到.")
             return
         for i in range(0, 10):
             touch(pos)
             sleep(0.5)
-            pos2 = exists(Template(r"tpl1568259388088.png", record_pos=(-0.003, 0.323), resolution=(1080, 1920)))
+            # pos2 = exists(Template(r"tpl1568259388088.png", record_pos=(-0.003, 0.323), resolution=(1080, 1920)))
+            pos2 = exists_any([
+                Template(r"tpl1568259388088.png", record_pos=(-0.003, 0.323), resolution=(1080, 1920)),
+                Template(r"tpl1597907023319.png", record_pos=(-0.03, -0.4), resolution=(1080, 2280))
+            ])
             if (pos2 == False):
                 # Todo: 需要检测和跳过的流程
                 if(self.Channel.skipInterstitial(isReportInterstitial)):
@@ -186,14 +203,25 @@ class MyTalkingTom(Game):
                 sleep(0.5)
                 continue
             return
-        assert_equal(True, False, "Should not be here.")
+        assert_equal(True, False, "不应该出现在这里.")
     
     def backToMain(self):
+        '''返回主界面'''
         for i in range(0, 10):
             pos = exists(Template(r"tpl1568254696587.png", record_pos=(-0.399, 0.769), resolution=(1080, 1920)))
             if (pos != False):
                 for j in range(0, 10):
-                    pos = exists_any([Template(r"tpl1567667429838.png", record_pos=(-0.203, 0.922), resolution=(1080, 2248)), Template(r"tpl1567667416052.png", record_pos=(-0.194, 0.92), resolution=(1080, 2248)), Template(r"tpl1567589317467.png", record_pos=(-0.196, 0.925), resolution=(1080, 2248)), Template(r"tpl1567589396053.png", record_pos=(-0.198, 0.925), resolution=(1080, 2248))])
+                    pos = exists_any([
+                        # Template(r"tpl1567667429838.png", record_pos=(-0.203, 0.922), resolution=(1080, 2248)),
+                        # Template(r"tpl1567667416052.png", record_pos=(-0.194, 0.92), resolution=(1080, 2248)),
+                        # Template(r"tpl1567589317467.png", record_pos=(-0.196, 0.925), resolution=(1080, 2248)),
+                        # Template(r"tpl1567589396053.png", record_pos=(-0.198, 0.925), resolution=(1080, 2248))
+                        Template(r"tpl1567667429838.png", record_pos=(-0.203, 0.922), resolution=(1080, 2248)),
+                        Template(r"tpl1567667416052.png", record_pos=(-0.194, 0.92), resolution=(1080, 2248)),
+                        Template(r"tpl1567589317467.png", record_pos=(-0.196, 0.925), resolution=(1080, 2248)),
+                        Template(r"tpl1567589396053.png", record_pos=(-0.198, 0.925), resolution=(1080, 2248)),
+                        Template(r"tpl1596538199151.png", record_pos=(-0.194, 0.948), resolution=(1080, 2340))
+                    ])
                     if (pos == False):
                         break
                     touch(pos)
@@ -206,11 +234,12 @@ class MyTalkingTom(Game):
                     return
                 break
             keyevent("Back")
-        assert_equal(True, False, "Should not be here.")
+        assert_equal(True, False, "不应该出现在这里.")
     
     '''==================== skips ===================='''
 
     def click_GuoqingSignin(self, isReport=False):
+        '''国庆登录'''
         pos = exists(Template(r"tpl1569579851173.png", record_pos=(-0.017, 0.654), resolution=(1080, 2280)))
         if (pos == False):
             return False
@@ -223,6 +252,7 @@ class MyTalkingTom(Game):
 
 
     def skip_permission(self, times = 10):
+        '''跳过权限'''
         poco = self.poco
         for i in range(0, times):
             if poco(text = "始终允许").exists():
@@ -239,15 +269,28 @@ class MyTalkingTom(Game):
                 continue
     
     def skip_beginner_gift(self):
+        '''跳过新手礼包'''
         sleep(2)
-        pos = exists(Template(r"tpl1567506478562.png", record_pos=(0.33, 0.508), resolution=(1080, 2248)))
+        # pos = exists(Template(r"tpl1567506478562.png", record_pos=(0.33, 0.508), resolution=(1080, 2248)))
+        pos = exists_any([
+            Template(r"tpl1567506478562.png", record_pos=(0.33, 0.508), resolution=(1080, 2248)),
+            Template(r"tpl1597912343392.png", record_pos=(-0.067, -0.493), resolution=(1080, 2340))
+        ])
         if (pos != False):
             touch(Template(r"tpl1567506495302.png", record_pos=(0.406, -0.835), resolution=(1080, 2248)))
             return True
         return False
 
     def skip_daily_challenge(self):
+        '''跳过每日挑战'''
         pos = exists(Template(r"tpl1568704252875.png", record_pos=(0.004, -0.448), resolution=(1080, 1920)))
+        if (pos == False):
+            return
+        keyevent("BACK")
+
+    def skip_daily_discount(self):
+        '''跳过每日优惠'''
+        pos = exists(Template(r"tpl1597912633490.png", record_pos=(0.006, -0.286), resolution=(1080, 2340)))
         if (pos == False):
             return
         keyevent("BACK")
@@ -277,47 +320,90 @@ class MyTalkingTom_Guide():
         self.Reporter = self.MyTalkingTom.Reporter
 
     '''==================== 入口 ====================='''
-    
-    # 新手指引入口
+
     def guide(self):
+        '''新手指引入口'''
         self.MyTalkingTom.stop_app()
 #         self.MyTalkingTom.clear_app()
         self.MyTalkingTom.start_app()
-        self.MyTalkingTom.skip_permission(times = 10)
-        self.beginner_guide()
-        self.MyTalkingTom.goToLivingroom()
-        self.MyTalkingTom.skip_beginner_gift()
-    
-    # 查看设置入口
+        self.MyTalkingTom.skip_permission(times = 10)   # 跳过权限
+        self.beginner_guide()     # 新手引导
+        self.MyTalkingTom.goToLivingroom()   # 前往客厅
+        self.MyTalkingTom.skip_beginner_gift()   # 跳过新手礼包
+
     def setting(self):
+        '''查看设置入口'''
         self.setting_setting()
         self.setting_law()
         self.setting_Tom()
-    
-    # 查看商店入口
+
     def shop(self):
+        '''查看商店入口'''
         case = self.MasterManager.curCase
-        case.Message += "TestPoint: Guide_CheckShop\n"
+        case.Message += "检测点: Guide_商店计费点\n"
         touch(Template(r"tpl1567577009407.png", record_pos=(-0.151, -0.704), resolution=(1080, 2248)))
-        shopItenList = [Template(r"tpl1567577145301.png", record_pos=(-0.328, -0.476), resolution=(1080, 2248)), Template(r"tpl1567577155616.png", record_pos=(0.0, -0.478), resolution=(1080, 2248)), Template(r"tpl1567577162271.png", record_pos=(0.331, -0.478), resolution=(1080, 2248)), Template(r"tpl1567577172516.png", record_pos=(-0.331, -0.08), resolution=(1080, 2248)), Template(r"tpl1567577180097.png", record_pos=(0.001, -0.08), resolution=(1080, 2248)), Template(r"tpl1567577188547.png", record_pos=(0.333, -0.081), resolution=(1080, 2248)), Template(r"tpl1567577198689.png", record_pos=(-0.33, 0.321), resolution=(1080, 2248))]
+        shopItenList = [
+            Template(r"tpl1567577145301.png", record_pos=(-0.328, -0.476), resolution=(1080, 2248)),
+            Template(r"tpl1567577155616.png", record_pos=(0.0, -0.478), resolution=(1080, 2248)),
+            Template(r"tpl1567577162271.png", record_pos=(0.331, -0.478), resolution=(1080, 2248)),
+            Template(r"tpl1597918289917.png", record_pos=(0.332, -0.098), resolution=(1200, 2640)),
+            Template(r"tpl1567577172516.png", record_pos=(-0.331, -0.08), resolution=(1080, 2248)),
+            Template(r"tpl1567577180097.png", record_pos=(0.001, -0.08), resolution=(1080, 2248)),
+            Template(r"tpl1567577188547.png", record_pos=(0.333, -0.081), resolution=(1080, 2248)),
+            Template(r"tpl1567577198689.png", record_pos=(-0.33, 0.321), resolution=(1080, 2248))
+        ]
         i = 0
         for icon in shopItenList:
             i += 1
             if (exists(icon) == False):
                 assert_equal(True, True, "商店界面检查失败")
-                case.Message += "Shop item doesn't exist, No." + i.__str__() +"\n"
+                case.Message += "计费不存在----No." + i.__str__() +"\n"
             else:
-                case.Message += "Shop item exists, No." + i.__str__() +"\n"
+                case.Message += "计费点存在++++No." + i.__str__() +"\n"
         self.MyTalkingTom.backToMain()
         self.Channel.skipInterstitial()
-    
-    # 查看小游戏入口
+
     def minigame(self):
+        '''
+        查看小游戏入口
+        '''
         case = self.MasterManager.curCase
-        case.Message += "TestPoint: Guide_MiniGame\n"
-        miniGameIconList = [Template(r"tpl1567568552138.png", record_pos=(-0.333, -0.729), resolution=(1080, 2248)), Template(r"tpl1567568560247.png", record_pos=(0.0, -0.723), resolution=(1080, 2248)), Template(r"tpl1567568568392.png", record_pos=(0.331, -0.728), resolution=(1080, 2248)), Template(r"tpl1567568575420.png", record_pos=(-0.332, -0.384), resolution=(1080, 2248)), Template(r"tpl1567568582932.png", record_pos=(0.0, -0.381), resolution=(1080, 2248)), Template(r"tpl1567568590180.png", record_pos=(0.334, -0.382), resolution=(1080, 2248)), Template(r"tpl1567568600042.png", record_pos=(-0.333, -0.042), resolution=(1080, 2248)), Template(r"tpl1567568607725.png", record_pos=(-0.002, -0.045), resolution=(1080, 2248)), Template(r"tpl1567568615766.png", record_pos=(0.332, -0.042), resolution=(1080, 2248)), Template(r"tpl1567568625266.png", record_pos=(-0.331, 0.3), resolution=(1080, 2248)), Template(r"tpl1567568632782.png", record_pos=(-0.003, 0.301), resolution=(1080, 2248)), Template(r"tpl1567568640140.png", record_pos=(0.333, 0.3), resolution=(1080, 2248)), Template(r"tpl1567568648180.png", record_pos=(-0.333, 0.644), resolution=(1080, 2248)), Template(r"tpl1567568657400.png", record_pos=(0.001, 0.644), resolution=(1080, 2248)), Template(r"tpl1567568663741.png", record_pos=(0.333, 0.648), resolution=(1080, 2248))]
+        case.Message += "检测点: Guide_小游戏\n"
+        miniGameIconList = [
+            Template(r"tpl1567568552138.png", record_pos=(-0.333, -0.729), resolution=(1080, 2248)),
+            Template(r"tpl1567568560247.png", record_pos=(0.0, -0.723), resolution=(1080, 2248)),
+            Template(r"tpl1567568568392.png", record_pos=(0.331, -0.728), resolution=(1080, 2248)),
+            Template(r"tpl1567568575420.png", record_pos=(-0.332, -0.384), resolution=(1080, 2248)),
+            Template(r"tpl1567568582932.png", record_pos=(0.0, -0.381), resolution=(1080, 2248)),
+            Template(r"tpl1567568590180.png", record_pos=(0.334, -0.382), resolution=(1080, 2248)),
+            Template(r"tpl1567568600042.png", record_pos=(-0.333, -0.042), resolution=(1080, 2248)),
+            Template(r"tpl1567568607725.png", record_pos=(-0.002, -0.045), resolution=(1080, 2248)),
+            Template(r"tpl1567568615766.png", record_pos=(0.332, -0.042), resolution=(1080, 2248)),
+            Template(r"tpl1567568625266.png", record_pos=(-0.331, 0.3), resolution=(1080, 2248)),
+            Template(r"tpl1567568632782.png", record_pos=(-0.003, 0.301), resolution=(1080, 2248)),
+            Template(r"tpl1567568640140.png", record_pos=(0.333, 0.3), resolution=(1080, 2248)),
+            Template(r"tpl1567568648180.png", record_pos=(-0.333, 0.644), resolution=(1080, 2248)),
+            Template(r"tpl1567568657400.png", record_pos=(0.001, 0.644), resolution=(1080, 2248)),
+            Template(r"tpl1567568663741.png", record_pos=(0.333, 0.648), resolution=(1080, 2248))
+        ]
         
-        miniGameSuccessList = [Template(r"tpl1567578931672.png", record_pos=(0.018, -0.391), resolution=(1080, 2248)), Template(r"tpl1567578946168.png", record_pos=(-0.42, 0.702), resolution=(1080, 2248)), Template(r"tpl1567578955683.png", record_pos=(-0.001, 0.85), resolution=(1080, 2248)), Template(r"tpl1567578969466.png", record_pos=(0.017, -0.64), resolution=(1080, 2248)), Template(r"tpl1567578987185.png", record_pos=(0.014, 0.874), resolution=(1080, 2248)), Template(r"tpl1567579003401.png", record_pos=(-0.01, 0.323), resolution=(1080, 2248)), Template(r"tpl1567579024583.png", record_pos=(0.001, -0.416), resolution=(1080, 2248)), Template(r"tpl1567579043716.png", record_pos=(0.309, 0.874), resolution=(1080, 2248)), Template(r"tpl1567579062359.png", record_pos=(-0.127, 0.694), resolution=(1080, 2248)), Template(r"tpl1567579075533.png", record_pos=(0.307, 0.922), resolution=(1080, 2248)), Template(r"tpl1567579095148.png", record_pos=(-0.279, -0.707), resolution=(1080, 2248)), Template(r"tpl1567579104679.png", threshold=0.6, record_pos=(-0.254, -0.591), resolution=(1080, 2248)), Template(r"tpl1567579117927.png", record_pos=(-0.209, -0.01), resolution=(1080, 2248)), Template(r"tpl1567579131413.png", record_pos=(0.005, -0.299), resolution=(1080, 2248)), Template(r"tpl1567579140011.png", record_pos=(-0.423, 0.391), resolution=(1080, 2248))]
+        miniGameSuccessList = [
+            Template(r"tpl1567578931672.png", record_pos=(0.018, -0.391), resolution=(1080, 2248)),
+            Template(r"tpl1567578946168.png", record_pos=(-0.42, 0.702), resolution=(1080, 2248)),
+            Template(r"tpl1567578955683.png", record_pos=(-0.001, 0.85), resolution=(1080, 2248)),
+            Template(r"tpl1567578969466.png", record_pos=(0.017, -0.64), resolution=(1080, 2248)),
+            Template(r"tpl1567578987185.png", record_pos=(0.014, 0.874), resolution=(1080, 2248)),
+            Template(r"tpl1567579003401.png", record_pos=(-0.01, 0.323), resolution=(1080, 2248)),
+            Template(r"tpl1567579024583.png", record_pos=(0.001, -0.416), resolution=(1080, 2248)),
+            Template(r"tpl1567579043716.png", record_pos=(0.309, 0.874), resolution=(1080, 2248)),
+            Template(r"tpl1567579062359.png", record_pos=(-0.127, 0.694), resolution=(1080, 2248)),
+            Template(r"tpl1567579075533.png", record_pos=(0.307, 0.922), resolution=(1080, 2248)),
+            Template(r"tpl1567579095148.png", record_pos=(-0.279, -0.707), resolution=(1080, 2248)),
+            Template(r"tpl1567579104679.png", threshold=0.6, record_pos=(-0.254, -0.591), resolution=(1080, 2248)),
+            Template(r"tpl1567579117927.png", record_pos=(-0.209, -0.01), resolution=(1080, 2248)),
+            Template(r"tpl1567579131413.png", record_pos=(0.005, -0.299), resolution=(1080, 2248)),
+            Template(r"tpl1567579140011.png", record_pos=(-0.423, 0.391), resolution=(1080, 2248))
+        ]
         
         self.MyTalkingTom.goToLivingroom()
         touch(Template(r"tpl1567569220185.png", record_pos=(-0.304, 0.714), resolution=(1080, 2248)))
@@ -330,15 +416,15 @@ class MyTalkingTom_Guide():
                 pos = exists(miniGameIconList[i])
                 if (pos != False):
                     break
-                assert_equal(True, True, "Mini game check failed, No." + (i + 1).__str__())
-                case.Message += "Mini game check failed, No." + (i + 1).__str__() + "\n"
+                assert_equal(True, True, "小游戏检测失败----No." + (i + 1).__str__())
+                case.Message += "小游戏检测失败----No." + (i + 1).__str__() + "\n"
                 continue
             touch(pos)
             sleep(1)
             pos = exists(miniGameSuccessList[i])
             if (pos == False):
-                assert_equal(True, True, "Mini game check failed, No." + (i + 1).__str__())
-                case.Message += "Mini game check failed, No." + (i + 1).__str__() + "\n"
+                assert_equal(True, True, "小游戏检测失败----No." + (i + 1).__str__())
+                case.Message += "小游戏检测失败----No." + (i + 1).__str__() + "\n"
                 self.MyTalkingTom.backToMain()
                 self.Channel.skipInterstitial()
                 touch(Template(r"tpl1567569220185.png", record_pos=(-0.304, 0.714), resolution=(1080, 2248)))
@@ -359,17 +445,17 @@ class MyTalkingTom_Guide():
         self.Channel.skipInterstitial()
     
     '''================= For guide() ================='''
-    
-    # 新手引导
+
     def beginner_guide(self):
+        '''新手引导'''
         self.Channel.login()
         sleep(3)
         touch(Template(r"tpl1567501638079.png", record_pos=(0.383, 0.022), resolution=(1080, 2248)), duration=0.5, times = 2)
         sleep(1)
         touch(Template(r"tpl1567501771358.png", rgb=True, record_pos=(0.001, 0.401), resolution=(1080, 2248)))
-        sleep(1)
-        touch(Template(r"tpl1567501786370.png", record_pos=(0.323, -0.004), resolution=(1080, 2248)))
-        sleep(10)
+        # sleep(1)
+        # touch(Template(r"tpl1567501786370.png", record_pos=(0.323, -0.004), resolution=(1080, 2248)))
+        sleep(5)
         pos = exists(Template(r"tpl1567504064721.png", record_pos=(0.02, 0.386), resolution=(1080, 2248)))
         if (pos != False):
             touch(pos)
@@ -407,9 +493,9 @@ class MyTalkingTom_Guide():
         
 
     '''================ For setting() ================'''
-    
-    # 设置界面
+
     def setting_setting(self):
+        '''设置界面'''
         case = self.MasterManager.curCase
         case.Message += "测试点: 设置界面\n"
         sleep(1)
@@ -421,9 +507,9 @@ class MyTalkingTom_Guide():
             case.Message += "设置界面测试失败\n"
         self.MyTalkingTom.backToMain()
         self.Channel.skipInterstitial()
-    
-    # 法律界面
+
     def setting_law(self):
+        '''法律界面'''
         case = self.MasterManager.curCase
         case.Message += "测试点：法律界面\n"
         sleep(1)
@@ -443,8 +529,8 @@ class MyTalkingTom_Guide():
         self.MyTalkingTom.backToMain()
         self.Channel.skipInterstitial()
 
-    # 汤姆猫信息界面
     def setting_Tom(self):
+        '''汤姆猫信息界面'''
         
         case = self.MasterManager.curCase
         case.Message += "测试点：汤姆猫信息界面\n"
@@ -567,9 +653,26 @@ class MyTalkingTom_Ad():
         self.Channel.isBannerExists(isReport = True)
         
         # 小游戏
-        miniGameIconList = [Template(r"tpl1567568552138.png", record_pos=(-0.333, -0.729), resolution=(1080, 2248)), Template(r"tpl1567568560247.png", record_pos=(0.0, -0.723), resolution=(1080, 2248)), Template(r"tpl1567568568392.png", record_pos=(0.331, -0.728), resolution=(1080, 2248)), Template(r"tpl1567568575420.png", record_pos=(-0.332, -0.384), resolution=(1080, 2248)), Template(r"tpl1567568582932.png", record_pos=(0.0, -0.381), resolution=(1080, 2248)), Template(r"tpl1567568590180.png", record_pos=(0.334, -0.382), resolution=(1080, 2248)), Template(r"tpl1567568600042.png", record_pos=(-0.333, -0.042), resolution=(1080, 2248)), Template(r"tpl1567568607725.png", record_pos=(-0.002, -0.045), resolution=(1080, 2248)), Template(r"tpl1567568615766.png", record_pos=(0.332, -0.042), resolution=(1080, 2248)), Template(r"tpl1567568625266.png", record_pos=(-0.331, 0.3), resolution=(1080, 2248)), Template(r"tpl1567568632782.png", record_pos=(-0.003, 0.301), resolution=(1080, 2248)), Template(r"tpl1567568640140.png", record_pos=(0.333, 0.3), resolution=(1080, 2248)), Template(r"tpl1567568648180.png", record_pos=(-0.333, 0.644), resolution=(1080, 2248)), Template(r"tpl1567568657400.png", record_pos=(0.001, 0.644), resolution=(1080, 2248)), Template(r"tpl1567568663741.png", record_pos=(0.333, 0.648), resolution=(1080, 2248))]
+        miniGameIconList = [
+            Template(r"tpl1567568552138.png", record_pos=(-0.333, -0.729), resolution=(1080, 2248)),
+            Template(r"tpl1567568560247.png", record_pos=(0.0, -0.723), resolution=(1080, 2248)),
+            Template(r"tpl1567568568392.png", record_pos=(0.331, -0.728), resolution=(1080, 2248)),
+            Template(r"tpl1567568575420.png", record_pos=(-0.332, -0.384), resolution=(1080, 2248)),
+            Template(r"tpl1567568582932.png", record_pos=(0.0, -0.381), resolution=(1080, 2248)),
+            Template(r"tpl1567568590180.png", record_pos=(0.334, -0.382), resolution=(1080, 2248)),
+            Template(r"tpl1567568600042.png", record_pos=(-0.333, -0.042), resolution=(1080, 2248)),
+            Template(r"tpl1567568607725.png", record_pos=(-0.002, -0.045), resolution=(1080, 2248)),
+            Template(r"tpl1567568615766.png", record_pos=(0.332, -0.042), resolution=(1080, 2248)),
+            Template(r"tpl1567568625266.png", record_pos=(-0.331, 0.3), resolution=(1080, 2248)),
+            Template(r"tpl1567568632782.png", record_pos=(-0.003, 0.301), resolution=(1080, 2248)),
+            Template(r"tpl1567568640140.png", record_pos=(0.333, 0.3), resolution=(1080, 2248)),
+            Template(r"tpl1567568648180.png", record_pos=(-0.333, 0.644), resolution=(1080, 2248)),
+            Template(r"tpl1567568657400.png", record_pos=(0.001, 0.644), resolution=(1080, 2248)),
+            Template(r"tpl1567568663741.png", record_pos=(0.333, 0.648), resolution=(1080, 2248))]
         touch(Template(r"tpl1567569220185.png", record_pos=(-0.304, 0.714), resolution=(1080, 2248)))
+
         case.Message += "TestPoint: CheckBanner_Livingroom_MiniGameSelectScreen\n"
+
         self.Channel.isBannerExists(isReport = True)
         for i in range(0, 15):
             case.Message += "TestPoint: CheckBanner_Livingroom_MiniGame No." + i.__str__() + "\n"

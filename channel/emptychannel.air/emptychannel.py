@@ -19,7 +19,9 @@ class emptychannel(Channel):
     def login(self):
         sleep(20)
         for i in range(1, 10):
-            pos = exists_any([Template(r"tpl1568883448109.png", record_pos=(0.381, 0.02), resolution=(1080, 1920)), Template(r"tpl1568883477317.png", record_pos=(-0.397, 0.765), resolution=(1080, 1920))])
+            pos = exists_any([
+                Template(r"tpl1568883448109.png", record_pos=(0.381, 0.02), resolution=(1080, 1920)),
+                Template(r"tpl1568883477317.png", record_pos=(-0.397, 0.765), resolution=(1080, 1920))])
             if (pos != False):
                 break
             else:
