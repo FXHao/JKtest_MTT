@@ -294,6 +294,13 @@ class MyTalkingTom(Game):
         if (pos == False):
             return
         keyevent("BACK")
+
+    def skip_useragreement(self):
+        '''跳过用户协议'''
+        pos = exists(Template(r"tpl1598595829203.png", record_pos=(0.007, 0.324), resolution=(1080, 2340)))
+        if (pos == False):
+            return
+        keyevent("BACK")
     
 class MyTalkingTom_Guide():
     
@@ -497,7 +504,7 @@ class MyTalkingTom_Guide():
     def setting_setting(self):
         '''设置界面'''
         case = self.MasterManager.curCase
-        case.Message += "测试点: 设置界面\n"
+        case.Message += "TestPoint: 设置界面\n"
         sleep(1)
         touch(Template(r"tpl1567566946253.png", record_pos=(-0.372, -0.633), resolution=(1080, 2248)))
         touch(Template(r"tpl1567566961287.png", record_pos=(0.153, 0.909), resolution=(1080, 2248)))
@@ -511,7 +518,7 @@ class MyTalkingTom_Guide():
     def setting_law(self):
         '''法律界面'''
         case = self.MasterManager.curCase
-        case.Message += "测试点：法律界面\n"
+        case.Message += "TestPoint：法律界面\n"
         sleep(1)
         touch(Template(r"tpl1567566946253.png", record_pos=(-0.372, -0.633), resolution=(1080, 2248)))
         touch(Template(r"tpl1567566961287.png", record_pos=(0.153, 0.909), resolution=(1080, 2248)))
@@ -533,7 +540,7 @@ class MyTalkingTom_Guide():
         '''汤姆猫信息界面'''
         
         case = self.MasterManager.curCase
-        case.Message += "测试点：汤姆猫信息界面\n"
+        case.Message += "TestPoint：汤姆猫信息界面\n"
         
         sleep(1)
         touch(Template(r"tpl1567566946253.png", record_pos=(-0.372, -0.633), resolution=(1080, 2248)))
@@ -693,7 +700,8 @@ class MyTalkingTom_Ad():
             sleep(1)
             self.Channel.isBannerExists(isReport = True)
             keyevent("BACK")
-            pos = exists(Template(r"tpl1567569005154.png", record_pos=(-0.159, 0.199), resolution=(1080, 2248)))
+            # pos = exists(Template(r"tpl1567569005154.png", record_pos=(-0.159, 0.199), resolution=(1080, 2248)))
+            pos = exists(Template(r"tpl1598238931015.png", record_pos=(-0.161, 0.218), resolution=(1200, 2640)))
             if (pos != False):
                 touch(pos)
                 sleep(0.5)
@@ -756,10 +764,16 @@ class MyTalkingTom_Ad():
         case.Message += "TestPoint: CheckVideo_GiftBox\n"
         self.MyTalkingTom.goToLivingroom()
         sleep(10)
-        pos = exists_any([Template(r"tpl1568189218352.png", record_pos=(0.355, 0.276), resolution=(1080, 1920)), Template(r"tpl1568794142300.png", record_pos=(0.354, 0.275), resolution=(1080, 1920)), Template(r"tpl1568794239667.png", record_pos=(0.352, 0.283), resolution=(1080, 1920)), Template(r"tpl1568796220494.png", record_pos=(0.356, 0.288), resolution=(1080, 1920))])
+        pos = exists_any([
+            Template(r"tpl1598239772586.png", record_pos=(0.378, 0.398), resolution=(1200, 2640)),
+            Template(r"tpl1568189218352.png", record_pos=(0.355, 0.276), resolution=(1080, 1920)),
+            Template(r"tpl1568794142300.png", record_pos=(0.354, 0.275), resolution=(1080, 1920)),
+            Template(r"tpl1568794239667.png", record_pos=(0.352, 0.283), resolution=(1080, 1920)),
+            Template(r"tpl1568796220494.png", record_pos=(0.356, 0.288), resolution=(1080, 1920)),
+        ])
         if (pos == False):
             case.Message += "TestPoint: CheckVideo_GiftBox\n"
-            assert_equal(True, True, "未发现主界面礼盒")
+            assert_equal(True, True, "未发现主界面视频盒")
             return
         touch(pos)
         sleep(1)
@@ -781,10 +795,16 @@ class MyTalkingTom_Ad():
         case = self.MasterManager.curCase
         case.Message += "TestPoint: CheckVideo_Toy\n"
         self.MyTalkingTom.goToLivingroom()
-        pos = exists_any([Template(r"tpl1568189505139.png", record_pos=(-0.274, 0.308), resolution=(1080, 1920)), Template(r"tpl1568861089586.png", record_pos=(-0.27, 0.056), resolution=(1080, 1920)), Template(r"tpl1569480855531.png", record_pos=(-0.286, 0.382), resolution=(1080, 2244)), Template(r"tpl1571146159552.png", record_pos=(-0.277, 0.378), resolution=(1080, 2280))])
+        pos = exists_any([
+            Template(r"tpl1598604534344.png", record_pos=(-0.328, 0.472), resolution=(720, 1600)),
+            Template(r"tpl1568189505139.png", record_pos=(-0.274, 0.308), resolution=(1080, 1920)),
+            Template(r"tpl1568861089586.png", record_pos=(-0.27, 0.056), resolution=(1080, 1920)),
+            Template(r"tpl1569480855531.png", record_pos=(-0.286, 0.382), resolution=(1080, 2244)),
+            Template(r"tpl1571146159552.png", record_pos=(-0.277, 0.378), resolution=(1080, 2280))
+        ])
         if (pos == False):
-            case.Message += "未发现主界面礼盒\n"
-            assert_equal(True, True, "未发现主界面礼盒")
+            case.Message += "未发现主界面小玩具\n"
+            assert_equal(True, True, "未发现主界面小玩具")
             return
         else:
             for i in range(0, 10):
@@ -853,7 +873,8 @@ class MyTalkingTom_Ad():
         sleep(0.5)
         touch(Template(r"tpl1568190621163.png", record_pos=(-0.295, -0.545), resolution=(1080, 1920)))
         sleep(0.5)
-        pos = exists(Template(r"tpl1568190636606.png", record_pos=(0.013, -0.452), resolution=(1080, 1920)))
+        # pos = exists(Template(r"tpl1568190636606.png", record_pos=(0.013, -0.452), resolution=(1080, 1920)))
+        pos = exists(Template(r"tpl1598604812017.png", record_pos=(0.014, -0.558), resolution=(720, 1600)))
         if (pos == False):
             case.Message += "未发现食物界面视频\n"
             assert_equal(True, True, "未发现食物界面视频")
@@ -875,7 +896,7 @@ class MyTalkingTom_Ad():
                 swipe(position_to_absolute([0.5, 0.8]), position_to_absolute([0.5, 0.4]))
                 continue
             break
-        touch(pos)
+        # touch(pos)
         sleep(2)
         touch(position_to_absolute([0.5, 0.8]))
         sleep(2)
@@ -936,7 +957,14 @@ class MyTalkingTom_Ad():
             keyevent("BACK")
             return
         if (isReport == True):
-            touch(Template(r"tpl1568255751963.png", record_pos=(0.0, 0.379), resolution=(1080, 1920)))
+            pos = exists_any([
+                Template(r"tpl1598605327591.png", record_pos=(0.001, 0.447), resolution=(720, 1600)),
+                Template(r"tpl1568255751963.png", record_pos=(0.0, 0.379), resolution=(1080, 1920))
+            ])
+            # touch(Template(r"tpl1568255751963.png", record_pos=(0.0, 0.379), resolution=(1080, 1920)))
+            if (pos == False):
+                return
+            touch(pos)
             sleep(5)
             self.Channel.skipVideo(isReport = True)
             self.MyTalkingTom.backToMain()
@@ -953,7 +981,15 @@ class MyTalkingTom_Ad():
             keyevent("BACK")
             return
         if (isReport == True):
-            touch(Template(r"tpl1568256218734.png", record_pos=(0.0, 0.381), resolution=(1080, 1920)))
+            # touch(Template(r"tpl1568256218734.png", record_pos=(0.0, 0.381), resolution=(1080, 1920)))
+            pos = exists_any([
+                Template(r"tpl1598605327591.png", record_pos=(0.001, 0.447), resolution=(720, 1600)),
+                Template(r"tpl1568255751963.png", record_pos=(0.0, 0.379), resolution=(1080, 1920))
+            ])
+            # touch(Template(r"tpl1568255751963.png", record_pos=(0.0, 0.379), resolution=(1080, 1920)))
+            if (pos == False):
+                return
+            touch(pos)
             sleep(5)
             self.Channel.skipVideo(isReport = True)
             self.MyTalkingTom.backToMain()

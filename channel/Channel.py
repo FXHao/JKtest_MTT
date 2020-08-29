@@ -147,9 +147,10 @@ class Channel(ABC):
     
     '''================= 广告识别相关 ================='''
     
-    ''' 开屏是否存在 '''
+
     def isSplashExists(self, isReport = False):
-        
+        ''' 开屏是否存在 '''
+
         # 普通开屏(Poco)
         pos = exists_any(self.getPoco(self.eCheckPoint["OrdinarySplash_Exist"]))
         if (pos != False):
@@ -196,10 +197,13 @@ class Channel(ABC):
         self.Reporter.report("未检测到开屏", isReport_caller = isReport)
         return False
         
-    ''' Banner 是否存在
-        若存在, 则输出存在并返回True
-        若不存在则返回False '''
+
     def isBannerExists(self, isReport = False):
+        '''
+        Banner 是否存在
+        若存在, 则输出存在并返回True
+        若不存在则返回False
+        '''
         
         checkpoint_list = [[self.Game.nativeBanner, "检测到原生Banner(图片)"],
                            [self.getPoco(self.eCheckPoint["OrdinaryBanner_Exist"]), "检测到普通Banner(Poco)"],
@@ -223,7 +227,11 @@ class Channel(ABC):
         若无插屏广告返回False
         若有插屏广告, 关闭插屏广告并放回True '''
     def skipInterstitial(self, isReport = False):
-        
+        '''
+        跳过插屏广告
+        若无插屏广告返回False
+        若有插屏广告, 关闭插屏广告并放回True
+        '''
         sleep(4)
         
         checkpoint_list = [[self.getPoco(self.eCheckPoint["OrdinaryInterstitial_Exist"]),
@@ -265,7 +273,12 @@ class Channel(ABC):
         若无视频播放, 返回False
         若有视频播放, 等待视频结束并返回True '''
     def skipVideo(self, isReport = False):
-        
+        '''
+        跳过视频
+        若无视频播放, 返回False
+        若有视频播放, 等待视频结束并返回True
+        '''
+
         sleep(40)
         
         checkpoint_list = [[self.getPoco(self.eCheckPoint["Video_Close"]), "检测到视频(Poco)"],
@@ -291,14 +304,16 @@ class Channel(ABC):
 
     
     '''=============== 对应渠道流程相关 ================'''
-    
-    ''' 登录 '''
+
+
     @abstractmethod
     def login(self):
+        ''' 登录 '''
         pass
     
-    ''' 重开游戏(未完) '''
+
     def restart(self):
+        ''' 重开游戏(未完) '''
         stop_app(self.AppID)
         start_app(self.AppID)
         self.login()
