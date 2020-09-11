@@ -325,7 +325,8 @@ class Channel(ABC):
         print("Banner: " + self.isSplashExists().__str__())
         print("Interstitial: " + self.isSplashExists().__str__())
         print("Interstitial Close: " + self.isSplashExists().__str__())
-        print("Video: " + self.isVideoExists().__str__())
+        # print("Video: " + self.isVideoExists().__str__())
+        print("Video: " + self.skipVideo().__str__())
 
     def isCheckPointReady(self, checkpoint = "All"):
         
@@ -334,20 +335,16 @@ class Channel(ABC):
         isInterstitialReady = True
         isVideoReady = True
         
-        if (self.getPoco(self.eCheckPoint["OrdinarySplash_Exist"]) == None and 
-            self.getImage(self.eCheckPoint["OrdinarySplash_Exist"]) == None):
+        if (self.getPoco(self.eCheckPoint["OrdinarySplash_Exist"]) == None and self.getImage(self.eCheckPoint["OrdinarySplash_Exist"]) == None):
             isSplashReady = False
         
-        if (self.getPoco(self.eCheckPoint["OrdinaryBanner_Exist"]) == None and 
-            self.getImage(self.eCheckPoint["OrdinaryBanner_Exist"]) == None):
+        if (self.getPoco(self.eCheckPoint["OrdinaryBanner_Exist"]) == None and self.getImage(self.eCheckPoint["OrdinaryBanner_Exist"]) == None):
             isBannerReady == False
     
-        if (self.getPoco(self.eCheckPoint["OrdinaryInterstitial_Exist"]) == None and
-            self.getImage(self.eCheckPoint["OrdinaryInterstitial_Exist"]) == None):
+        if (self.getPoco(self.eCheckPoint["OrdinaryInterstitial_Exist"]) == None and self.getImage(self.eCheckPoint["OrdinaryInterstitial_Exist"]) == None):
             isInterstitialReady == False
         
-        if ((self.getPoco(self.eCheckPoint["Video_Exist"]) == None or 
-            self.getPoco(self.eCheckPoint["Video_End"]) == None) and
+        if ((self.getPoco(self.eCheckPoint["Video_Exist"]) == None or self.getPoco(self.eCheckPoint["Video_End"]) == None) and
             self.getImage(self.eCheckPoint["Video_Close"]) == None):
             isVideoReady == False
         

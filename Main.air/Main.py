@@ -9,6 +9,11 @@ from airtest.core.android.adb import *
 from TestManager.TestMasterManager import MasterManager
 from airtest.core.android.android import *
 
+import logging
+logger = logging.getLogger("airtest")
+logger.setLevel(logging.ERROR)
+
+
 def run():
     # 主管理程序实例化
     m_MasterManager = MasterManager()

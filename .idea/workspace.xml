@@ -20,9 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb7b9086-983e-4ff8-bfa2-926b94580e8b" name="Default Changelist" comment="1">
-      <change beforePath="$PROJECT_DIR$/.idea/JinkeTest_MTT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JinkeTest_MTT.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/tpl1598604534344.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.air/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.air/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/Channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/Channel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/MyTalkingTom.air/MyTalkingTom.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/MyTalkingTom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/Log1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/Log1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/process.CSV" beforeDir="false" afterPath="$PROJECT_DIR$/process.CSV" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +45,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/game/MyTalkingTom.air" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -51,7 +58,12 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\Desktop\博客\GitHub\JinkeTest_MTT\game\MyTalkingTom.air" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Main">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="JinkeTest_MTT" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -74,9 +86,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="MainCMD" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="JinkeTest_MTT" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MainCMD.air" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MainCMD.air/MainCMD.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Main" />
+        <item itemvalue="Python.MainCMD" />
       </list>
     </recent_temporary>
   </component>
@@ -91,6 +126,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599809073126</updated>
       <workItem from="1599809074713" duration="3517000" />
+      <workItem from="1599815766802" duration="11276000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1599809133961</created>
@@ -99,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599809133961</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1">
+      <created>1599815801632</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599815801632</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,34 +158,36 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
     <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="167" key="GridCell.Tab.0.bottom" timestamp="1599812745763">
+    <state width="1877" height="134" key="GridCell.Tab.0.bottom" timestamp="1599825585329">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="167" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1599812745763" />
-    <state width="1877" height="167" key="GridCell.Tab.0.center" timestamp="1599812745763">
+    <state width="1877" height="134" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1599825585329" />
+    <state width="1877" height="134" key="GridCell.Tab.0.center" timestamp="1599825585329">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="167" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1599812745763" />
-    <state width="1877" height="167" key="GridCell.Tab.0.left" timestamp="1599812745763">
+    <state width="1877" height="134" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1599825585329" />
+    <state width="1877" height="134" key="GridCell.Tab.0.left" timestamp="1599825585329">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="167" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1599812745763" />
-    <state width="1877" height="167" key="GridCell.Tab.0.right" timestamp="1599812745763">
+    <state width="1877" height="134" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1599825585329" />
+    <state width="1877" height="134" key="GridCell.Tab.0.right" timestamp="1599825585329">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="167" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1599812745763" />
-    <state x="457" y="263" key="Vcs.Push.Dialog.v2" timestamp="1599809151395">
+    <state width="1877" height="134" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1599825585329" />
+    <state x="457" y="263" key="Vcs.Push.Dialog.v2" timestamp="1599815809627">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="457" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1599809151395" />
+    <state x="457" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1599815809627" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/JinkeTest_MTT$Main.coverage" NAME="Main Coverage Results" MODIFIED="1599809477794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main.air" />
+    <SUITE FILE_PATH="coverage/JinkeTest_MTT$Main.coverage" NAME="Main Coverage Results" MODIFIED="1599825284077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main.air" />
+    <SUITE FILE_PATH="coverage/JinkeTest_MTT$MainCMD.coverage" NAME="MainCMD Coverage Results" MODIFIED="1599819101482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainCMD.air" />
   </component>
 </project>

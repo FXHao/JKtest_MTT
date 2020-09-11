@@ -633,12 +633,14 @@ class MyTalkingTom_Ad():
         
         case = self.MasterManager.curCase
         case.Message += "TestPoint: CheckVideo\n"
-        for fun in [self.checkVideo_GiftBox, 
-                    self.checkVideo_Toy, 
-                    self.checkVideo_LivingroomBottonRight, 
-                    self.checkVideo_Pay,
-                    self.checkVideo_Refrigerator,
-                    self.checkVideo_MiniGame]:
+        for fun in [
+            self.checkVideo_GiftBox,
+            self.checkVideo_Toy,
+            self.checkVideo_LivingroomBottonRight,
+            self.checkVideo_Pay,
+            self.checkVideo_Refrigerator,
+            # self.checkVideo_MiniGame
+        ]:
             try:
                 fun()
             except:
