@@ -575,8 +575,11 @@ class MyTalkingTom_Ad():
 
     '''==================== 入口 ====================='''
     
-    ''' 检测开屏 '''
     def checkSplash(self):
+        '''
+        检测开屏
+        :return:
+        '''
         sleep(2)
         self.MyTalkingTom.stop_app()
         sleep(2)
@@ -584,8 +587,11 @@ class MyTalkingTom_Ad():
         self.Channel.isSplashExists(isReport = True)
         self.Channel.login()
         
-    ''' 检测Banner '''
     def checkBanner(self):
+        '''
+        检测Banner
+        :return:
+        '''
         
         for fun in [self.checkBanner_Livingroom, 
                     self.checkBanner_Kitchen, 
@@ -598,9 +604,11 @@ class MyTalkingTom_Ad():
                 traceback.print_exc()
                 self.Channel.restart()
 
-    ''' 检测插屏 '''
     def checkInterstitial(self):
-        
+        '''
+        检测插屏
+        :return:
+        '''
         case = self.MasterManager.curCase
         
         self.MyTalkingTom.goToBedroom()
@@ -622,9 +630,13 @@ class MyTalkingTom_Ad():
         self.MyTalkingTom.goToBathroom(isReportInterstitial = True)
         case.Message += "TestPoint: CheckInterstitial_GoToBedroom\n"
         self.MyTalkingTom.goToBedroom(isReportInterstitial = True)
-        
-    ''' 检测视频 '''
+
+
     def checkVideo(self):
+        '''
+        检测视频
+        :return:
+        '''
         
         if (self.Channel.isCheckPointReady("Video") == False):
             assert_equal("True", "True", "Video检测点尚未适配此渠道")
@@ -650,8 +662,11 @@ class MyTalkingTom_Ad():
     
     '''============= For checkBanner() =============='''
     
-    # 客厅
     def checkBanner_Livingroom(self):
+        '''
+        检测客厅banner
+        :return:
+        '''
         
         case = self.MasterManager.curCase
         
@@ -662,58 +677,58 @@ class MyTalkingTom_Ad():
         self.Channel.isBannerExists(isReport = True)
         
         # 小游戏
-        miniGameIconList = [
-            Template(r"tpl1567568552138.png", record_pos=(-0.333, -0.729), resolution=(1080, 2248)),
-            Template(r"tpl1567568560247.png", record_pos=(0.0, -0.723), resolution=(1080, 2248)),
-            Template(r"tpl1567568568392.png", record_pos=(0.331, -0.728), resolution=(1080, 2248)),
-            Template(r"tpl1567568575420.png", record_pos=(-0.332, -0.384), resolution=(1080, 2248)),
-            Template(r"tpl1567568582932.png", record_pos=(0.0, -0.381), resolution=(1080, 2248)),
-            Template(r"tpl1567568590180.png", record_pos=(0.334, -0.382), resolution=(1080, 2248)),
-            Template(r"tpl1567568600042.png", record_pos=(-0.333, -0.042), resolution=(1080, 2248)),
-            Template(r"tpl1567568607725.png", record_pos=(-0.002, -0.045), resolution=(1080, 2248)),
-            Template(r"tpl1567568615766.png", record_pos=(0.332, -0.042), resolution=(1080, 2248)),
-            Template(r"tpl1567568625266.png", record_pos=(-0.331, 0.3), resolution=(1080, 2248)),
-            Template(r"tpl1567568632782.png", record_pos=(-0.003, 0.301), resolution=(1080, 2248)),
-            Template(r"tpl1567568640140.png", record_pos=(0.333, 0.3), resolution=(1080, 2248)),
-            Template(r"tpl1567568648180.png", record_pos=(-0.333, 0.644), resolution=(1080, 2248)),
-            Template(r"tpl1567568657400.png", record_pos=(0.001, 0.644), resolution=(1080, 2248)),
-            Template(r"tpl1567568663741.png", record_pos=(0.333, 0.648), resolution=(1080, 2248))]
-        touch(Template(r"tpl1567569220185.png", record_pos=(-0.304, 0.714), resolution=(1080, 2248)))
-
-        case.Message += "TestPoint: CheckBanner_Livingroom_MiniGameSelectScreen\n"
-
-        self.Channel.isBannerExists(isReport = True)
-        for i in range(0, 15):
-            case.Message += "TestPoint: CheckBanner_Livingroom_MiniGame No." + i.__str__() + "\n"
-            for j in range(0, 2):
-                swipe(position_to_absolute([0.5, 0.4]), position_to_absolute([0.5, 0.8])) 
-            for j in range(0, 3):
-                pos = exists(miniGameIconList[i])
-                if (pos == False):
-                    swipe(Template(r"tpl1569661033837.png", record_pos=(0.001, 0.637), resolution=(1080.0, 1920.0)), vector=[-0.0411, -0.5995])
-
-                    continue
-                else:
-                    break
-            if (pos == False):
-                self.Reporter.report("Game icon not found.")
-                continue
-            touch(pos)
-            sleep(1)
-            self.Channel.isBannerExists(isReport = True)
-            keyevent("BACK")
-            # pos = exists(Template(r"tpl1567569005154.png", record_pos=(-0.159, 0.199), resolution=(1080, 2248)))
-            pos = exists(Template(r"tpl1598238931015.png", record_pos=(-0.161, 0.218), resolution=(1200, 2640)))
-            if (pos != False):
-                touch(pos)
-                sleep(0.5)
-                self.Channel.skipInterstitial()
-                sleep(0.5)
-                keyevent("BACK")
-            #while(exists(Template(r"tpl1567592656112.png", record_pos=(-0.306, -0.958), resolution=(1080, 2248))) == False):
-                #keyevent("BACK")
-        self.MyTalkingTom.backToMain()
-        self.Channel.skipInterstitial()
+        # miniGameIconList = [
+        #     Template(r"tpl1567568552138.png", record_pos=(-0.333, -0.729), resolution=(1080, 2248)),
+        #     Template(r"tpl1567568560247.png", record_pos=(0.0, -0.723), resolution=(1080, 2248)),
+        #     Template(r"tpl1567568568392.png", record_pos=(0.331, -0.728), resolution=(1080, 2248)),
+        #     Template(r"tpl1567568575420.png", record_pos=(-0.332, -0.384), resolution=(1080, 2248)),
+        #     Template(r"tpl1567568582932.png", record_pos=(0.0, -0.381), resolution=(1080, 2248)),
+        #     Template(r"tpl1567568590180.png", record_pos=(0.334, -0.382), resolution=(1080, 2248)),
+        #     Template(r"tpl1567568600042.png", record_pos=(-0.333, -0.042), resolution=(1080, 2248)),
+        #     Template(r"tpl1567568607725.png", record_pos=(-0.002, -0.045), resolution=(1080, 2248)),
+        #     Template(r"tpl1567568615766.png", record_pos=(0.332, -0.042), resolution=(1080, 2248)),
+        #     Template(r"tpl1567568625266.png", record_pos=(-0.331, 0.3), resolution=(1080, 2248)),
+        #     Template(r"tpl1567568632782.png", record_pos=(-0.003, 0.301), resolution=(1080, 2248)),
+        #     Template(r"tpl1567568640140.png", record_pos=(0.333, 0.3), resolution=(1080, 2248)),
+        #     Template(r"tpl1567568648180.png", record_pos=(-0.333, 0.644), resolution=(1080, 2248)),
+        #     Template(r"tpl1567568657400.png", record_pos=(0.001, 0.644), resolution=(1080, 2248)),
+        #     Template(r"tpl1567568663741.png", record_pos=(0.333, 0.648), resolution=(1080, 2248))]
+        # touch(Template(r"tpl1567569220185.png", record_pos=(-0.304, 0.714), resolution=(1080, 2248)))
+        #
+        # case.Message += "TestPoint: CheckBanner_Livingroom_MiniGameSelectScreen\n"
+        #
+        # self.Channel.isBannerExists(isReport = True)
+        # for i in range(0, 15):
+        #     case.Message += "TestPoint: CheckBanner_Livingroom_MiniGame No." + i.__str__() + "\n"
+        #     for j in range(0, 2):
+        #         swipe(position_to_absolute([0.5, 0.4]), position_to_absolute([0.5, 0.8]))
+        #     for j in range(0, 3):
+        #         pos = exists(miniGameIconList[i])
+        #         if (pos == False):
+        #             swipe(Template(r"tpl1569661033837.png", record_pos=(0.001, 0.637), resolution=(1080.0, 1920.0)), vector=[-0.0411, -0.5995])
+        #
+        #             continue
+        #         else:
+        #             break
+        #     if (pos == False):
+        #         self.Reporter.report("Game icon not found.")
+        #         continue
+        #     touch(pos)
+        #     sleep(1)
+        #     self.Channel.isBannerExists(isReport = True)
+        #     keyevent("BACK")
+        #     # pos = exists(Template(r"tpl1567569005154.png", record_pos=(-0.159, 0.199), resolution=(1080, 2248)))
+        #     pos = exists(Template(r"tpl1598238931015.png", record_pos=(-0.161, 0.218), resolution=(1200, 2640)))
+        #     if (pos != False):
+        #         touch(pos)
+        #         sleep(0.5)
+        #         self.Channel.skipInterstitial()
+        #         sleep(0.5)
+        #         keyevent("BACK")
+        #     #while(exists(Template(r"tpl1567592656112.png", record_pos=(-0.306, -0.958), resolution=(1080, 2248))) == False):
+        #         #keyevent("BACK")
+        # self.MyTalkingTom.backToMain()
+        # self.Channel.skipInterstitial()
     
     # 厨房
     def checkBanner_Kitchen(self):
@@ -733,9 +748,13 @@ class MyTalkingTom_Ad():
         self.Channel.isBannerExists(isReport = True)
         self.MyTalkingTom.backToMain()
         self.Channel.skipInterstitial()
-    
-    # 浴室
+
+
     def checkBanner_Bathroom(self):
+        '''
+        检测浴室banner
+        :return:
+        '''
         
         case = self.MasterManager.curCase
         
@@ -746,9 +765,13 @@ class MyTalkingTom_Ad():
         self.checkVideo_skip_Clean()
         sleep(2)
         self.Channel.isBannerExists(isReport = True)
-    
-    # 卧室
+
+
     def checkBanner_Bedroom(self):
+        '''
+        检测卧室banner
+        :return:
+        '''
         
         case = self.MasterManager.curCase
         

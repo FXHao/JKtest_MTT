@@ -20,14 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb7b9086-983e-4ff8-bfa2-926b94580e8b" name="Default Changelist" comment="1">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/tpl1598604534344.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.air/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.air/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/Channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/Channel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/MyTalkingTom.air/MyTalkingTom.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/MyTalkingTom.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/Log1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/Log1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process.CSV" beforeDir="false" afterPath="$PROJECT_DIR$/process.CSV" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +120,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599809073126</updated>
       <workItem from="1599809074713" duration="3517000" />
-      <workItem from="1599815766802" duration="11276000" />
+      <workItem from="1599815766802" duration="14099000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1599809133961</created>
@@ -142,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599815801632</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1">
+      <created>1599833456346</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1599833456346</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,29 +166,29 @@
     <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="134" key="GridCell.Tab.0.bottom" timestamp="1599825585329">
+    <state width="1877" height="249" key="GridCell.Tab.0.bottom" timestamp="1599876229301">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="134" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1599825585329" />
-    <state width="1877" height="134" key="GridCell.Tab.0.center" timestamp="1599825585329">
+    <state width="1877" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1599876229301" />
+    <state width="1877" height="249" key="GridCell.Tab.0.center" timestamp="1599876229301">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="134" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1599825585329" />
-    <state width="1877" height="134" key="GridCell.Tab.0.left" timestamp="1599825585329">
+    <state width="1877" height="249" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1599876229301" />
+    <state width="1877" height="249" key="GridCell.Tab.0.left" timestamp="1599876229301">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="134" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1599825585329" />
-    <state width="1877" height="134" key="GridCell.Tab.0.right" timestamp="1599825585329">
+    <state width="1877" height="249" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1599876229301" />
+    <state width="1877" height="249" key="GridCell.Tab.0.right" timestamp="1599876229301">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="134" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1599825585329" />
-    <state x="457" y="263" key="Vcs.Push.Dialog.v2" timestamp="1599815809627">
+    <state width="1877" height="249" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1599876229301" />
+    <state x="457" y="263" key="Vcs.Push.Dialog.v2" timestamp="1599833477455">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="457" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1599815809627" />
+    <state x="457" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1599833477455" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/JinkeTest_MTT$Main.coverage" NAME="Main Coverage Results" MODIFIED="1599825284077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main.air" />
+    <SUITE FILE_PATH="coverage/JinkeTest_MTT$Main.coverage" NAME="Main Coverage Results" MODIFIED="1599875407506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main.air" />
     <SUITE FILE_PATH="coverage/JinkeTest_MTT$MainCMD.coverage" NAME="MainCMD Coverage Results" MODIFIED="1599819101482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainCMD.air" />
   </component>
 </project>
